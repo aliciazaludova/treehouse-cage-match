@@ -1,0 +1,43 @@
+body {
+    font-family: 'Gugi', cursive;
+}
+
+.header {
+    font-size: 3em;
+    padding: 20px;
+    background-color: #5cb85c;
+    color: white;
+    border: 2px solid #15c6ee;
+    border-radius: 5px;
+}
+
+#btn {
+    padding: 20px 20px 15px 20px;
+    font-size: 1.5em;
+}
+
+#user-1, #user-2 {
+    font-size: 2em;
+}
+
+.resize-img {
+    height: 400px;
+    width: 400px;
+    border: 2px solid #15c6ee;
+    border-radius: 5px;
+}
+
+.winner {
+    font-size: 3em;
+    padding: 20px;
+    background-color: #5cb85c;
+    color: white;
+    border: 2px solid #15c6ee;
+    border-radius: 5px;
+}
+
+
+.badges {
+    width: 12%;
+    height: auto;
+}
