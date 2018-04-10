@@ -6,16 +6,19 @@
 const printToDom = (domString, divId) => {
     document.getElementById(divId).innerHTML += domString;
 };
-
+// player[] is now userArray
+// it's not giving anything if it can't access props on the array. the array is player[].
 const buildDomString = (userArray) => {
     // make empty string so it can accumulate += stuff
-    console.log(userArray.gravatar_url);
     let domString = "";
+    // for loop should after the above
+    for(let i = 0; i < userArray.length; i++) {
     domString += `<div class="col-md-6">`;
-    domString += `<h3>${userArray.name}</h3>`;
-    domString += `<img src="${userArray.gravatar_url}">`;
-    domString += `<h3>${userArray.points.total}</h3>`;
+    domString += `<h3>${userArray[i].name}</h3>`;
+    domString += `<img src="${userArray[i].gravatar_url}">`;
+    domString += `<h3>${userArray[i].points.total}</h3>`;
     domString += `</div>`;
+    }
     printToDom(domString, "output");
     winnerNow(userArray);
 }
@@ -30,15 +33,16 @@ const winnerNow = (userArray) => {
     }
 }
 
-const printWinnerToDom = (user) => {
+const printWinnerToDom = (winner) => {
+    console.log(winner);
     let winnerString = "";
-    winnerString += `<div class="winner">${user.name}<div>`;
-    for (let j = 0; j < 0; j++) {
-        winnerString += `<div class="badges-holder">`;
-        winnerString += `<div>${user.badges[j].name}</div>`;
-        winnerString += `<img src="${user.badges[j].icon_url}">`;
-        winnerString += `</div>`;
-    }
+    winnerString += `<div class="winner">${winner.name}<div>`;
+    console.log(winnerString);
+    winnerString += `<div class="badges-holder">`;
+    winner.badges.forEach (badge => {
+    winnerString += `<img src="${winner.badges.icon_url}">`;
+    })
+    winnerString += `</div>`;
     printToDom(winnerString, "winner-holder");
 }
 
@@ -88,7 +92,7 @@ function startPlayer2(weGonnaCallPlayer1) {
         function executeThisCodeAfterPlayer2FileLoaded () {
             const data2 = JSON.parse(this.responseText);
             players.push(weGonnaCallPlayer1, data2);
-            buildDomString(data2);
+            buildDomString(players);
         }
 }
 // make object from JSON file of player 1 data
@@ -97,6 +101,7 @@ function startPlayer2(weGonnaCallPlayer1) {
 function executeThisCodeAfterPlayer1FileLoaded () {
     const data1 = JSON.parse(this.responseText);
     startPlayer2(data1);  // we pass player 1 data into player 2 while we get player 2 so we can make an array of both of them to compare later. both will be in one function. this makes sure not happen at same time.
+    // this makes certain player 1's data loads so we call player 2 here once that is sure
 }
 
 
