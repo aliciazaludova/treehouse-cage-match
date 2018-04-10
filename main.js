@@ -15,7 +15,7 @@ const buildDomString = (userArray) => {
     for(let i = 0; i < userArray.length; i++) {
     domString += `<div class="col-md-6">`;
     domString += `<h3>${userArray[i].name}</h3>`;
-    domString += `<img src="${userArray[i].gravatar_url}">`;
+    domString += `<img class="resize-img" src="${userArray[i].gravatar_url}">`;
     domString += `<h3>${userArray[i].points.total}</h3>`;
     domString += `</div>`;
     }
@@ -36,12 +36,12 @@ const winnerNow = (userArray) => {
 const printWinnerToDom = (winner) => {
     console.log(winner);
     let winnerString = "";
-    winnerString += `<div class="winner">${winner.name}<div>`;
+    winnerString += `<div class="winner">${winner.name} is the winner!<div>`;
     console.log(winnerString);
     winnerString += `<div class="badges-holder">`;
     winner.badges.forEach (badge => {
-    winnerString += `<img src="${winner.badges.icon_url}">`;
-    })
+    winnerString += `<img class="badges" src="${badge.icon_url}">`;
+    });
     winnerString += `</div>`;
     printToDom(winnerString, "winner-holder");
 }
