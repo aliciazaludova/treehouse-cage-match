@@ -1,5 +1,5 @@
 // two boxes on page and button
-// 
+//
 
 // domString + printToDom
 
@@ -34,10 +34,10 @@ const winnerNow = (userArray) => {
 }
 
 const printWinnerToDom = (winner) => {
-    console.log(winner);
+    // console logged
     let winnerString = "";
     winnerString += `<div class="winner">${winner.name} is the winner!<div>`;
-    console.log(winnerString);
+    //console logged
     winnerString += `<div class="badges-holder">`;
     winner.badges.forEach (badge => {
     winnerString += `<img class="badges" src="${badge.icon_url}">`;
