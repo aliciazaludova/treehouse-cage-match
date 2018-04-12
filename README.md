@@ -20,9 +20,11 @@ Once the button is hit the code will:
 - Display who the winner is and show their badges using the bootstrap grid system
 - The page is modeled on the following mock-up:
 #### Mock-up
+<img width="551" alt="cage-match-mockup" src="https://user-images.githubusercontent.com/33577725/38696399-9cf3bee8-3e54-11e8-9db2-a7b7917d9ea3.png">
 
 ## Screenshot
 ### Single-page application
+![cage-match-post-execution](https://user-images.githubusercontent.com/33577725/38696377-8f5aa60c-3e54-11e8-88db-379d35888666.png)
 
 ## How to Run
 1. Go to: `https://www.npmjs.com/package/http-server` and install "http-server".  
